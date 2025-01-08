@@ -1,0 +1,60 @@
+
+
+/* Flexbox Layout Mixins */
+/* Row Alignment Mixins */
+@mixin df_row($justify-content, $align-items, $gap, $flex-wrap) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: $flex-wrap;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    gap: $gap;
+}
+
+/* Column Alignment Mixins */
+@mixin df_column($justify-content, $align-items, $gap, $flex-wrap) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: $flex-wrap;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    gap: $gap;
+}
+
+/* Positioning Utility Mixins */
+@mixin position($type, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+    position: $type;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+/* Custom Offsets */
+@mixin offset($position, $value) {
+    #{$position}: $value;
+}
+
+/* z-index Utility Mixins */
+@mixin z_index($value) {
+    z-index: $value;
+}
+
+/* Centering Utility */
+@mixin center_absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Responsive Centering */
+@mixin responsive_center {
+    @include small-break {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
