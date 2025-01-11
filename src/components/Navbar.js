@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { NavLink } from "react-router-dom"; // Use NavLink instead of Link
 import classes from "./Navbar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -71,7 +71,12 @@ const Navbar = () => {
             <p>Tasks</p>
           </div>
           <div className={classes.nav_items}>
-            <Link className={classes.nav_items_a} to="/todayTasks">
+            <NavLink
+              className={({ isActive }) =>
+                `${classes.nav_items_a} ${isActive ? classes.active : ""}`
+              }
+              to="/todayTasks"
+            >
               <div className={classes.nav_items_icon}>
                 <FontAwesomeIcon icon={faClipboardCheck} />
               </div>
@@ -85,10 +90,15 @@ const Navbar = () => {
                   <p>2</p>
                 </div>
               </div>
-            </Link>
+            </NavLink>
           </div>
           <div className={classes.nav_items}>
-            <Link className={classes.nav_items_a} to="/upcoming">
+            <NavLink
+              className={({ isActive }) =>
+                `${classes.nav_items_a} ${isActive ? classes.active : ""}`
+              }
+              to="/upcoming"
+            >
               <div className={classes.nav_items_icon}>
                 <FontAwesomeIcon icon={faThumbtack} />
               </div>
@@ -102,10 +112,15 @@ const Navbar = () => {
                   <p>1</p>
                 </div>
               </div>
-            </Link>
+            </NavLink>
           </div>
           <div className={classes.nav_items}>
-            <Link className={classes.nav_items_a} to="/calendar">
+            <NavLink
+              className={({ isActive }) =>
+                `${classes.nav_items_a} ${isActive ? classes.active : ""}`
+              }
+              to="/calendar"
+            >
               <div className={classes.nav_items_icon}>
                 <FontAwesomeIcon icon={faLayerGroup} />
               </div>
@@ -119,10 +134,15 @@ const Navbar = () => {
                   <p>4</p>
                 </div>
               </div>
-            </Link>
+            </NavLink>
           </div>
           <div className={classes.nav_items}>
-            <Link className={classes.nav_items_a} to="/StickyWall">
+            <NavLink
+              className={({ isActive }) =>
+                `${classes.nav_items_a} ${isActive ? classes.active : ""}`
+              }
+              to="/StickyWall"
+            >
               <div className={classes.nav_items_icon}>
                 <FontAwesomeIcon icon={faCalendar} />
               </div>
@@ -136,7 +156,7 @@ const Navbar = () => {
                   <p>7</p>
                 </div>
               </div>
-            </Link>
+            </NavLink>
           </div>
         </div>
 
@@ -145,7 +165,12 @@ const Navbar = () => {
             <p>Lists</p>
           </div>
           <div className={classes.nav_items}>
-            <Link className={classes.nav_items_a} to="/personal">
+            <NavLink
+              className={({ isActive }) =>
+                `${classes.nav_items_a} ${isActive ? classes.active : ""}`
+              }
+              to="/personal"
+            >
               <div className={classes.nav_items_icon}>
                 <FontAwesomeIcon icon={faUser} />
               </div>
@@ -159,10 +184,15 @@ const Navbar = () => {
                   <p>2</p>
                 </div>
               </div>
-            </Link>
+            </NavLink>
           </div>
           <div className={classes.nav_items}>
-            <Link className={classes.nav_items_a} to="/work">
+            <NavLink
+              className={({ isActive }) =>
+                `${classes.nav_items_a} ${isActive ? classes.active : ""}`
+              }
+              to="/work"
+            >
               <div className={classes.nav_items_icon}>
                 <FontAwesomeIcon icon={faThumbtack} />
               </div>
@@ -176,10 +206,15 @@ const Navbar = () => {
                   <p>1</p>
                 </div>
               </div>
-            </Link>
+            </NavLink>
           </div>
           <div className={classes.nav_items}>
-            <Link className={classes.nav_items_a} to="/addList">
+            <NavLink
+              className={({ isActive }) =>
+                `${classes.nav_items_a} ${isActive ? classes.active : ""}`
+              }
+              to="/addList"
+            >
               <div className={classes.nav_items_icon}>
                 <FontAwesomeIcon icon={faPlus} />
               </div>
@@ -190,7 +225,7 @@ const Navbar = () => {
               >
                 <p>Add New List</p>
               </div>
-            </Link>
+            </NavLink>
           </div>
         </div>
       </div>

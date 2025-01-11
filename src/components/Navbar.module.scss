@@ -15,6 +15,7 @@
     transition: max-width ease-in-out 0.2s;
     @include df_column(space-between, flex-start, 20px, nowrap);
     @include position(relative, auto, auto, auto, auto);
+   
     // ::after {
     //     content: "";
     //     @include position(absolute, 0, -20%, auto, auto);
@@ -39,6 +40,11 @@
         transition: all ease-in-out 0.2s;
         @include df_column(space-between, flex-start, 20px, nowrap);
         @include position(relative, auto, auto, auto, auto);
+        @include extra-small-break {
+        
+            padding: 1rem .8rem;
+           
+        }
     }
 }
 .nav_item_con {
@@ -49,7 +55,7 @@
         p {
             font-size: 1.6rem;
             font-weight: 600;
-            color: var( --primary-blue-color);
+            color: var(--primary-blue-color);
         }
     }
     .active {
@@ -72,7 +78,7 @@
             width: 100%;
             height: 100%;
             // border: solid var(--color-base-300) 1px;
-            background-color: var( --primary-blue-color);
+            background-color: var(--primary-blue-color);
             border-radius: var(--border-radius-1-);
             @include position(relative, auto, auto, auto, auto);
             overflow: hidden;
@@ -113,7 +119,7 @@
             width: 100%;
             height: 100%;
             // border: solid var(--color-base-300) 1px;
-            background-color: var( --primary-blue-color);
+            background-color: var(--primary-blue-color);
             border-radius: var(--border-radius-1-);
             @include position(relative, auto, auto, auto, auto);
             overflow: hidden;
@@ -154,10 +160,9 @@
         width: 100%;
         @include df_row(space-around, center, 1rem, nowrap);
         padding: 0.5rem 1rem;
-        border: solid var( --primary-blue-color) 1px;
+        border: solid var(--primary-blue-color) 1px;
         border-radius: var(--border-radius-3-);
-        background-color: var( --primary-blue-80-color);
-        
+        background-color: var(--primary-blue-80-color);
 
         .nav_search_bar_icon {
             @include df_row(space-around, center, 0rem, nowrap);
@@ -165,13 +170,11 @@
             height: 26px;
             padding: 1rem;
             font-size: 1rem;
-            color: var( --primary-blue-color);
+            color: var(--primary-blue-color);
             cursor: pointer;
-            
         }
         .nav_search_bar_inpucont_con {
             width: fit-content;
-           
 
             .active {
                 width: fit-content;
@@ -200,6 +203,7 @@
         width: 100%;
 
         @include df_row(space-around, center, 0rem, nowrap);
+        padding: 1rem 0rem;
         overflow: hidden;
 
         .profile_con1 {
@@ -238,7 +242,7 @@
         .profile_name_role_con {
             @include df_row(flex-start, center, 1rem, wrap);
 
-            .profile_name{
+            .profile_name {
                 color: var(--text-color-light);
             }
 
@@ -306,22 +310,25 @@
         width: 100%;
         overflow: hidden;
         @include df_row(flex-start, center, 1rem, nowrap);
-        padding: 0.5rem 1rem;
-        border-radius: var(--border-radius-2-);
         transition: ease-in-out 0.2s;
-
-        &:hover {
-            background-color: var(--primary-blue-50-color);
-        }
 
         .nav_items_a {
             width: fit-content;
-
+            padding: 0.5rem 1rem;
             color: var(--text-color-light);
+            border-radius: var(--border-radius-2-);
             @include df_row(center, center, 1rem, nowrap);
             // background-color: aqua;
-
+            &:hover {
+                background-color: var(--primary-blue-80-color);
+            }
             // overflow: hidden;
+            &.active {
+                background-color: var(--primary-blue-80-color);
+            }
+            &.active .active {
+                display: none;
+            }
             p {
                 font-size: 0.9rem;
                 font-weight: 400;
@@ -342,13 +349,15 @@
             .active {
                 width: fit-content;
                 transform: translateX(350px);
-                transition: transform ease-in-out 0.3s;
-                
+                transition: transform ease-in-out 0.4s;
+                display: none;
             }
+
             .hidden {
                 width: fit-content;
                 transform: translateX(0px);
                 transition: transform ease-in-out 0.3s;
+                @include df_row(space-between, center, 1rem, nowrap);
             }
 
             .item_count {

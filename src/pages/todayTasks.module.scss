@@ -5,3 +5,169 @@
 // @include df_row(flex-end, center, 1rem, nowrap);
 // @include position(absolute, 0, auto, auto, 0);
 // @include position(relative, auto, auto, auto, auto);
+
+.task_list {
+    width: 100%;
+    min-width: fit-content;
+    border-radius: var(--border-radius--);
+    @include df_column(center, flex-start, 1rem, nowrap);
+
+    .task_header_con {
+        .task_header {
+            @include df_row(flex-start, center, 1rem, nowrap);
+
+            h1 {
+                font-size: 3rem;
+                line-height: 0rem;
+                font-weight: bold;
+                color: var(--text-color-light);
+            }
+
+            .item_count {
+                padding: 0.3rem 0.5rem;
+                background-color: var(--primary-blue-50-color);
+                transform: translateY(-10px);
+                border-radius: var(--border-radius--);
+                p {
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .add_task_btn {
+        width: 100%;
+        height: 4rem;
+        background-color: var(--primary-blue-50-color);
+        color: var(--text-color-light);
+        border: none;
+        border-radius: var(--border-radius-3-);
+        padding: 10px 15px;
+        font-size: 1rem;
+        cursor: pointer;
+        @include df_row(flex-start, center, 1rem, nowrap);
+
+        &:hover {
+            background-color: var(--primary-blue-80-color);
+        }
+    }
+
+    .tasks {
+        width: 100%;
+        min-height: 40vh;
+        list-style: none;
+        padding: 0;
+        @include df_column(space-around, flex-start, 1rem, nowrap);
+        background-color: var(--primary-blue-80-color);
+        border-radius: var(--border-radius--);
+        padding: 1rem 2rem;
+
+        .task_item {
+            @include df_row(flex-start, center, 1rem, wrap);
+            width: 100%;
+            // background-color: var(--primary-blue-80-color);
+            // border-radius: var(--border-radius--);
+            padding: 1rem 2rem;
+            border-bottom: var(--primary-blue-color) solid 1px;
+            @include extra-small-break {
+                @include df_column(center, center, 1rem, wrap);
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+            .checkbox_container {
+               
+                padding: 1rem;
+
+                .checkbox_input {
+                    display: none;
+                }
+                .checkbox_label {
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+
+                    .custom_checkbox {
+                        width: 20px;
+                        height: 20px;
+                        border: 2px solid var(--primary-blue-color); // Customize the border color
+                        border-radius: 4px; // Makes it slightly rounded
+                        background-color: var(--primary-blue-80-color); // Default background
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 10px;
+                        transition: all 0.2s ease;
+
+                        // Checkmark style
+                        &::after {
+                            content: "";
+                            width: 10px;
+                            height: 10px;
+                            background-color: var(--primary-blue-color); // Checkmark color
+                            transform: scale(0); // Initially hidden
+                            transition: transform 0.2s ease;
+                            clip-path: polygon(14% 44%, 0% 61%, 49% 100%, 100% 16%, 85% 0%, 44% 72%);
+                        }
+                    }
+                }
+                .checkbox_input:checked + .checkbox_label .custom_checkbox {
+                    background-color: var(--primary-blue-80-color);// Background color when checked
+                
+                    &::after {
+                      transform: scale(1); // Show the checkmark
+                    }
+                  }
+            }
+
+            .task_label {
+                @include df_column(space-around, flex-start, .4rem, nowrap);
+
+                .task_title {
+                    font-size: 1.4rem;
+                    font-weight: 300;
+                    color: var(--text-color-light);
+                    @include small-break {
+                        font-size: 1rem;
+                    }
+                }
+                .task_date_subtacks{
+                    @include df_row(space-around, center, 1rem, wrap);
+                    .task_date {
+                        font-size: 0.9rem;
+                        color: var(--text-color-light);
+                    }
+    
+                    .task_subtasks {
+                        font-size: 0.9rem;
+                        color: var(--primary-blue-color);
+                    }
+    
+                }
+               
+                .task_label_chip {
+                    display: inline-block;
+                    padding: 2px 8px;
+                    border-radius: 12px;
+                    font-size: 0.8rem;
+                    
+
+                    &.personal {
+                       background-color: var(--primary-blue-80-color);
+                        color: var(--primary-blue-color);
+                        padding: .2rem .7rem;
+
+                    }
+
+                    &.default {
+                        background-color: var(--primary-blue-80-color);
+                        color: var(--primary-blue-color);
+                    }
+                }
+            }
+        }
+    }
+}
