@@ -1,9 +1,12 @@
 :root {
   /* General Colors */
-  --primary-color: #242424; /* Blue */
+  --primary-color: #000000; 
+  --primary-blue-color: #0490d8;/* Blue */
+  --primary-blue-50-color:#0491d85e;
+  --primary-blue-80-color:#0491d829;
   --secondary-color: #000000; /* Green */
   --secondary-light-color: #ffffff;
-  --text-color-light: rgb(255, 255, 255);
+  --text-color-light: white;
   --text-color-dark: rgb(27, 27, 27);
 
   /* Light mode - Base colors */

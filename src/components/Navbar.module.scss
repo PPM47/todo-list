@@ -49,7 +49,7 @@
         p {
             font-size: 1.6rem;
             font-weight: 600;
-            color: var(--text-color-light);
+            color: var( --primary-blue-color);
         }
     }
     .active {
@@ -72,7 +72,7 @@
             width: 100%;
             height: 100%;
             // border: solid var(--color-base-300) 1px;
-            background-color: var(--color-base-0);
+            background-color: var( --primary-blue-color);
             border-radius: var(--border-radius-1-);
             @include position(relative, auto, auto, auto, auto);
             overflow: hidden;
@@ -113,7 +113,7 @@
             width: 100%;
             height: 100%;
             // border: solid var(--color-base-300) 1px;
-            background-color: var(--color-base-0);
+            background-color: var( --primary-blue-color);
             border-radius: var(--border-radius-1-);
             @include position(relative, auto, auto, auto, auto);
             overflow: hidden;
@@ -154,8 +154,10 @@
         width: 100%;
         @include df_row(space-around, center, 1rem, nowrap);
         padding: 0.5rem 1rem;
-        border: solid var(--color-base-0) 1px;
+        border: solid var( --primary-blue-color) 1px;
         border-radius: var(--border-radius-3-);
+        background-color: var( --primary-blue-80-color);
+        
 
         .nav_search_bar_icon {
             @include df_row(space-around, center, 0rem, nowrap);
@@ -163,12 +165,13 @@
             height: 26px;
             padding: 1rem;
             font-size: 1rem;
-            color: var(--text-color-light);
+            color: var( --primary-blue-color);
             cursor: pointer;
             
         }
         .nav_search_bar_inpucont_con {
             width: fit-content;
+           
 
             .active {
                 width: fit-content;
@@ -209,7 +212,7 @@
                     @include df_column(center, center, 0rem, nowrap);
                     object-fit: contain;
                     object-position: center;
-                    border: solid 2px var(--text-color-light);
+                    border: solid 1px var(--primary-blue-color);
                     border-radius: 100%;
                     color: var(--text-color-light);
                 }
@@ -240,10 +243,11 @@
             }
 
             .profile_role_con {
-                background-color: var(--color-base-100);
+                background-color: var(--primary-blue-80-color);
                 padding: 0.4rem 0.5rem;
                 border-radius: var(--border-radius-2-);
                 font-size: 0.8rem;
+                color: var(--text-color-light);
             }
         }
         .profile_email_con {
@@ -258,7 +262,7 @@
                 overflow: hidden;
                 line-height: 24px;
                 font-size: 0.9rem;
-                color: var(--text-color-light);
+                color: var(--primary-blue-color);
             }
         }
     }
@@ -278,15 +282,15 @@
         @include position(absolute, auto, 0, -1rem, auto);
         width: 100%;
         height: 1px;
-
-        background: linear-gradient(
-            to bottom,
-            rgb(255, 255, 255) 0%,
-            rgb(255, 255, 255) 4%,
-            var(--color-base-0) 17%,
-            var(--color-base-0) 79%,
-            rgb(255, 255, 255) 100%
-        );
+        background-color: var(--primary-blue-color);
+        // background: linear-gradient(
+        //     to bottom,
+        //     rgb(255, 255, 255) 0%,
+        //     rgb(255, 255, 255) 4%,
+        //     var(--color-base-0) 17%,
+        //     var(--color-base-0) 79%,
+        //     rgb(255, 255, 255) 100%
+        // );
         border-radius: 100%;
     }
     .nav_item_con_title {
@@ -295,7 +299,7 @@
         p {
             font-size: 1rem;
             font-weight: 500;
-            color: var(--text-color-light);
+            color: var(--primary-blue-color);
         }
     }
     .nav_items {
@@ -307,7 +311,7 @@
         transition: ease-in-out 0.2s;
 
         &:hover {
-            background-color: var(--color-base-100);
+            background-color: var(--primary-blue-50-color);
         }
 
         .nav_items_a {
@@ -328,7 +332,7 @@
                 width: 26px;
                 height: 26px;
                 font-size: 1.2rem;
-                color: var(--text-color-light);
+                color: var(--primary-blue-color);
                 padding: 0.5rem 0.8rem;
             }
             .item_name {
@@ -351,7 +355,7 @@
                 width: 1.6rem;
                 height: 1.4rem;
                 @include df_row(center, center, 0rem, nowrap);
-                background-color: var(--color-base-50);
+                background-color: var(--primary-blue-80-color);
                 border-radius: calc(var(--border-radius-2-) / 2);
                 p {
                     font-size: 0.8rem;
