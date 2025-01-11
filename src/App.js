@@ -1,18 +1,26 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import ContentCard from "./layouts/ContentCard";
 import MainCard from "./layouts/MainCard";
 import Gutter from "./layouts/Gutter";
+
+import TodayTasks from "./pages/TodayTasks";
+import StickyWall from "./pages/StickyWall";
 
 function App() {
   return (
     <>
       <Gutter>
         <MainCard>
-          <Navbar />
-          <ContentCard/>
-
-
+          <Navbar /> {/* Navbar always visible */}
+          <ContentCard>
+            <Routes>
+              <Route path="/" element={<TodayTasks />} /> {/* Default Route */}
+              <Route path="/todayTasks" element={<TodayTasks />} />
+              <Route path="/stickyWall" element={<StickyWall />} />
+            </Routes>
+          </ContentCard>
         </MainCard>
       </Gutter>
     </>

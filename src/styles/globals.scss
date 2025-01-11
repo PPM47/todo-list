@@ -1,7 +1,7 @@
-@use './queries.scss' as *;
-@use './root.scss' as *;
-@use './colors.scss' as *;
-@use './type.scss' as *;
+@use "./queries.scss" as *;
+@use "./root.scss" as *;
+@use "./colors.scss" as *;
+@use "./type.scss" as *;
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.cdnfonts.com/css/kimberly-signature");
@@ -23,7 +23,7 @@ html {
   line-height: 1.15; /* Set default line height */
   -webkit-text-size-adjust: 100%; /* Prevent text size changes in iOS */
   font-size: 14px;
-  font-family: 'poppins' sans-serif;
+  font-family: "poppins";
   scroll-behavior: smooth;
   @include x-extra-small-break {
     font-size: 12px;
@@ -34,7 +34,7 @@ body {
   margin: 0;
   padding: 0;
   // overflow-x: hidden;
-  font-family: 'poppins'; /* Set default font */
+  font-family: "poppins"; /* Set default font */
   background-color: var(--color-base-50);
 }
 // div{
@@ -208,7 +208,7 @@ template {
 [hidden] {
   display: none;
 }
-.iin{
+.iin {
   color: var(--color-accent-200);
 }
 
@@ -217,4 +217,3 @@ template {
 .blue_gradient {
   @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
 }
-

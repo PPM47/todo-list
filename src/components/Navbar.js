@@ -1,123 +1,197 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import classes from "./Navbar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faHouse,
   faThumbtack,
   faLayerGroup,
-  faCalendar,
   faClipboardCheck,
-  faFolderPlus,
-  faGear,
+  faCalendar,
+  faUser,
+  faPlus,
+  faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(true);
 
+  const onClickSearch = () => {
+    setToggle(false);
+  };
+
   return (
-    <div className={`${toggle ? classes.main_contineractive : classes.main_continer}`}>
-      <div className={classes.nav_item_con}>
-        <div className={classes.side_menu_toggle}>
+    <div
+      className={`${
+        toggle ? classes.main_contineractive : classes.main_continer
+      }`}
+    >
+      <div className={classes.nav_main_item_con}>
+        <div className={classes.nav_item_con}>
           <div
-            className={`${toggle ? classes.toggle_btn : classes.toggle_btn_active}`}
-            onClick={() => setToggle((prev) => !prev)}
+            className={`${classes.item_name} ${
+              toggle ? classes.active : classes.hidden
+            }`}
           >
-            <div className={classes.toggle_btn_icon}></div>
-            {/* {toggle ? <div></div> : <div></div>} */}
+            <p>Home</p>
+          </div>
+          <div className={classes.side_menu_toggle}>
+            <div
+              className={`${
+                toggle ? classes.toggle_btn : classes.toggle_btn_active
+              }`}
+              onClick={() => setToggle((prev) => !prev)}
+            >
+              <div className={classes.toggle_btn_icon}></div>
+            </div>
           </div>
         </div>
-      </div>
+        <div className={classes.nav_item_con}>
+          <div className={classes.nav_search_bar}>
+            <div
+              className={classes.nav_search_bar_icon}
+              onClick={onClickSearch}
+            >
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </div>
+            <div
+              className={`${classes.nav_search_bar_inpucont_con} ${
+                toggle ? classes.active : classes.hidden
+              }`}
+            >
+              <input
+                className={classes.nav_search_bar_input}
+                placeholder="Search"
+              />
+            </div>
+          </div>
+        </div>
 
-      <div className={classes.nav_item2_con}>
-        <div className={classes.nav_items}>
-          <a className={classes.nav_items_a} href="#about" key={"#about"}>
-            <div className={classes.nav_items_icon}>
-              <FontAwesomeIcon icon={faHouse} />
-            </div>
-            <div className={`${toggle ? classes.active : classes.hidden}`}>
-            <p>Home</p>
-            </div>
-          </a>
+        <div className={classes.nav_item2_con}>
+          <div className={classes.nav_item_con_title}>
+            <p>Tasks</p>
+          </div>
+          <div className={classes.nav_items}>
+            <Link className={classes.nav_items_a} to="/todayTasks">
+              <div className={classes.nav_items_icon}>
+                <FontAwesomeIcon icon={faClipboardCheck} />
+              </div>
+              <div
+                className={`${classes.item_name} ${
+                  toggle ? classes.active : classes.hidden
+                }`}
+              >
+                <p>Today</p>
+                <div className={classes.item_count}>
+                  <p>2</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className={classes.nav_items}>
+            <Link className={classes.nav_items_a} to="/upcoming">
+              <div className={classes.nav_items_icon}>
+                <FontAwesomeIcon icon={faThumbtack} />
+              </div>
+              <div
+                className={`${classes.item_name} ${
+                  toggle ? classes.active : classes.hidden
+                }`}
+              >
+                <p>Upcoming Tasks</p>
+                <div className={classes.item_count}>
+                  <p>1</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className={classes.nav_items}>
+            <Link className={classes.nav_items_a} to="/calendar">
+              <div className={classes.nav_items_icon}>
+                <FontAwesomeIcon icon={faLayerGroup} />
+              </div>
+              <div
+                className={`${classes.item_name} ${
+                  toggle ? classes.active : classes.hidden
+                }`}
+              >
+                <p>Calendar</p>
+                <div className={classes.item_count}>
+                  <p>4</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className={classes.nav_items}>
+            <Link className={classes.nav_items_a} to="/StickyWall">
+              <div className={classes.nav_items_icon}>
+                <FontAwesomeIcon icon={faCalendar} />
+              </div>
+              <div
+                className={`${classes.item_name} ${
+                  toggle ? classes.active : classes.hidden
+                }`}
+              >
+                <p>Sticky Wall</p>
+                <div className={classes.item_count}>
+                  <p>7</p>
+                </div>
+              </div>
+            </Link>
+          </div>
         </div>
-        <div className={classes.nav_items}>
-          <a className={classes.nav_items_a} href="#skills" key={"#skills"}>
-            <div className={classes.nav_items_icon}>
-              <FontAwesomeIcon icon={faThumbtack} />
-            </div>
-            <div className={`${toggle ? classes.active : classes.hidden}`}>
-            <p>My Tasks</p>
-            </div>
-          </a>
-        </div>
-        <div className={classes.nav_items}>
-          <a
-            className={classes.nav_items_a}
-            href="#education"
-            key={"#education"}
-          >
-            <div className={classes.nav_items_icon}>
-              <FontAwesomeIcon icon={faLayerGroup} />
-            </div>
-            <div className={`${toggle ? classes.active : classes.hidden}`}>
-            <p>Categories</p>
-            </div>
-          </a>
-        </div>
-        <div className={classes.nav_items}>
-          <a
-            className={classes.nav_items_a}
-            href="#education"
-            key={"#education"}
-          >
-            <div className={classes.nav_items_icon}>
-              <FontAwesomeIcon icon={faCalendar} />
-            </div>
-            <div className={`${toggle ? classes.active : classes.hidden}`}>
-            <p>Calendar View</p>
-            </div>
-          </a>
-        </div>
-        <div className={classes.nav_items}>
-          <a
-            className={classes.nav_items_a}
-            href="#education"
-            key={"#education"}
-          >
-            <div className={classes.nav_items_icon}>
-              <FontAwesomeIcon icon={faClipboardCheck} />
-            </div>
-            <div className={`${toggle ? classes.active : classes.hidden}`}>
-            <p>Completed Tasks</p>
-            </div>
-          </a>
-        </div>
-        <div className={classes.nav_items}>
-          <a
-            className={classes.nav_items_a}
-            href="#education"
-            key={"#education"}
-          >
-            <div className={classes.nav_items_icon}>
-              <FontAwesomeIcon icon={faFolderPlus} />
-            </div>
-            <div className={`${toggle ? classes.active : classes.hidden}`}>
-            <p>Archived Tasks</p>
-            </div>
-          </a>
-        </div>
-        <div className={classes.nav_items}>
-          <a
-            className={classes.nav_items_a}
-            href="#education"
-            key={"#education"}
-          >
-            <div className={classes.nav_items_icon}>
-              <FontAwesomeIcon icon={faGear} />
-            </div>
-            <div className={`${toggle ? classes.active : classes.hidden}`}>
-            <p>Settings</p>
-            </div>
-          </a>
+
+        <div className={classes.nav_item2_con}>
+          <div className={classes.nav_item_con_title}>
+            <p>Lists</p>
+          </div>
+          <div className={classes.nav_items}>
+            <Link className={classes.nav_items_a} to="/personal">
+              <div className={classes.nav_items_icon}>
+                <FontAwesomeIcon icon={faUser} />
+              </div>
+              <div
+                className={`${classes.item_name} ${
+                  toggle ? classes.active : classes.hidden
+                }`}
+              >
+                <p>Personal</p>
+                <div className={classes.item_count}>
+                  <p>2</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className={classes.nav_items}>
+            <Link className={classes.nav_items_a} to="/work">
+              <div className={classes.nav_items_icon}>
+                <FontAwesomeIcon icon={faThumbtack} />
+              </div>
+              <div
+                className={`${classes.item_name} ${
+                  toggle ? classes.active : classes.hidden
+                }`}
+              >
+                <p>Work</p>
+                <div className={classes.item_count}>
+                  <p>1</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className={classes.nav_items}>
+            <Link className={classes.nav_items_a} to="/addList">
+              <div className={classes.nav_items_icon}>
+                <FontAwesomeIcon icon={faPlus} />
+              </div>
+              <div
+                className={`${classes.item_name} ${
+                  toggle ? classes.active : classes.hidden
+                }`}
+              >
+                <p>Add New List</p>
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
       <div className={classes.nav_item1_con}>
@@ -129,9 +203,13 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <div className={`${toggle ? classes.profile_con2active : classes.profile_con2}`}>
+          <div
+            className={`${
+              toggle ? classes.profile_con2active : classes.profile_con2
+            }`}
+          >
             <div className={classes.profile_name_role_con}>
-              <div className={classes.profile_name_role_con}>
+              <div className={classes.profile_name}>
                 <p>Pavan Malshan</p>
               </div>
               <div className={classes.profile_role_con}>

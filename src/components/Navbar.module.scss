@@ -44,14 +44,35 @@
 .nav_item_con {
     width: 100%;
     padding: 0.2rem;
+    @include df_row(space-between, flex-start, 0rem, nowrap);
+    .item_name {
+        p {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text-color-light);
+        }
+    }
+    .active {
+        width: fit-content;
+        transform: translateX(350px);
+        transition: transform ease-in-out 0.3s;
+        display: none;
+    }
+    .hidden {
+        width: fit-content;
+        transform: translateX(0px);
+        transition: transform ease-in-out 0.3s;
+    }
     .side_menu_toggle {
         width: 45px;
         height: 45px;
         @include df_column(center, center, 0rem, nowrap);
+
         .toggle_btn {
             width: 100%;
             height: 100%;
-            background-color: var(--secondary-light-color);
+            // border: solid var(--color-base-300) 1px;
+            background-color: var(--color-base-0);
             border-radius: var(--border-radius-1-);
             @include position(relative, auto, auto, auto, auto);
             overflow: hidden;
@@ -59,18 +80,18 @@
 
             &::after {
                 content: "";
-                width: 25px;
-                height: 4px;
+                width: 23px;
+                height: 3px;
                 background-color: var(--secondary-color);
                 border-radius: var(--border-radius-1-);
-                @include position(absolute, 57%, auto, auto, 50%);
+                @include position(absolute, 56%, auto, auto, 50%);
                 transform: translateX(-50%) translateY(50%);
                 transition: transform ease-in-out 0.3s;
             }
             &::before {
                 content: "";
-                width: 25px;
-                height: 4px;
+                width: 23px;
+                height: 3px;
                 background-color: var(--secondary-color);
                 border-radius: var(--border-radius-1-);
                 @include position(absolute, 40%, auto, auto, 50%);
@@ -79,8 +100,8 @@
             }
 
             .toggle_btn_icon {
-                width: 25px;
-                height: 4px;
+                width: 23px;
+                height: 3px;
                 background-color: var(--primary-color);
                 border-radius: var(--border-radius-1-);
                 @include position(absolute, 50%, auto, auto, 50%);
@@ -91,15 +112,16 @@
         .toggle_btn_active {
             width: 100%;
             height: 100%;
-            background-color: white;
+            // border: solid var(--color-base-300) 1px;
+            background-color: var(--color-base-0);
             border-radius: var(--border-radius-1-);
             @include position(relative, auto, auto, auto, auto);
             overflow: hidden;
             cursor: pointer;
             &::after {
                 content: "";
-                width: 25px;
-                height: 4px;
+                width: 23px;
+                height: 3px;
                 background-color: var(--secondary-color);
                 border-radius: var(--border-radius-1-);
                 @include position(absolute, 50%, auto, auto, 50%);
@@ -108,8 +130,8 @@
             }
             &::before {
                 content: "";
-                width: 25px;
-                height: 4px;
+                width: 23px;
+                height: 3px;
                 background-color: var(--secondary-color);
                 border-radius: var(--border-radius-1-);
                 @include position(absolute, 50%, auto, auto, 50%);
@@ -118,13 +140,49 @@
             }
 
             .toggle_btn_icon {
-                width: 25px;
-                height: 4px;
+                width: 23px;
+                height: 3px;
                 background-color: var(--primary-color);
                 border-radius: var(--border-radius-1-);
                 @include position(absolute, 50%, auto, auto, 50%);
                 transform: translateX(100%) translateY(-50%);
                 transition: transform ease-in-out 0.3s;
+            }
+        }
+    }
+    .nav_search_bar {
+        width: 100%;
+        @include df_row(space-around, center, 1rem, nowrap);
+        padding: 0.5rem 1rem;
+        border: solid var(--color-base-0) 1px;
+        border-radius: var(--border-radius-3-);
+
+        .nav_search_bar_icon {
+            @include df_row(space-around, center, 0rem, nowrap);
+            width: 26px;
+            height: 26px;
+            padding: 1rem;
+            font-size: 1rem;
+            color: var(--text-color-light);
+            cursor: pointer;
+            
+        }
+        .nav_search_bar_inpucont_con {
+            width: fit-content;
+
+            .active {
+                width: fit-content;
+                transform: translateX(350px);
+                transition: transform ease-in-out 0.3s;
+                display: none;
+            }
+
+            .nav_search_bar_input {
+                outline: none;
+                border: none;
+                background-color: transparent;
+                width: 100%;
+                color: var(--text-color-light);
             }
         }
     }
@@ -136,11 +194,14 @@
     @include df_column(space-around, center, 1rem, nowrap);
 
     .profile_con {
-        @include df_row(space-between, center, 1rem, nowrap);
         width: 100%;
+
+        @include df_row(space-around, center, 0rem, nowrap);
         overflow: hidden;
 
         .profile_con1 {
+            width: fit-content;
+
             .profile_img_con {
                 width: 100%;
                 @include df_column(center, center, 1rem, nowrap);
@@ -148,27 +209,35 @@
                     @include df_column(center, center, 0rem, nowrap);
                     object-fit: contain;
                     object-position: center;
-                    border: solid 2px var(--color-base-500);
+                    border: solid 2px var(--text-color-light);
                     border-radius: 100%;
+                    color: var(--text-color-light);
                 }
                 img {
-                    width: 3rem;
-                    height: 3rem;
+                    width: 2.2rem;
+                    height: 2.2rem;
+                    color: var(--text-color-light);
                 }
             }
         }
         .profile_con2 {
             width: fit-content;
+
             transform: translateX(0px);
             transition: transform ease-in-out 0.3s;
+
             &active {
-                width: fit-content;
                 transform: translateX(250px);
                 transition: transform ease-in-out 0.3s;
+                display: none;
             }
         }
         .profile_name_role_con {
             @include df_row(flex-start, center, 1rem, wrap);
+
+            .profile_name{
+                color: var(--text-color-light);
+            }
 
             .profile_role_con {
                 background-color: var(--color-base-100);
@@ -189,55 +258,104 @@
                 overflow: hidden;
                 line-height: 24px;
                 font-size: 0.9rem;
-                color: var(--text-color-dark);
+                color: var(--text-color-light);
             }
         }
     }
 }
+.nav_main_item_con {
+    width: 100%;
+    @include df_column(center, flex-start, 2rem, nowrap);
+}
 .nav_item2_con {
     width: 100%;
     height: 100%;
-
     @include df_column(space-around, flex-start, 1rem, nowrap);
+    @include position(relative, auto, auto, auto, auto);
+
+    &::after {
+        content: "";
+        @include position(absolute, auto, 0, -1rem, auto);
+        width: 100%;
+        height: 1px;
+
+        background: linear-gradient(
+            to bottom,
+            rgb(255, 255, 255) 0%,
+            rgb(255, 255, 255) 4%,
+            var(--color-base-0) 17%,
+            var(--color-base-0) 79%,
+            rgb(255, 255, 255) 100%
+        );
+        border-radius: 100%;
+    }
+    .nav_item_con_title {
+        width: 100%;
+        @include df_row(flex-start, center, 1rem, nowrap);
+        p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-color-light);
+        }
+    }
     .nav_items {
         width: 100%;
         overflow: hidden;
         @include df_row(flex-start, center, 1rem, nowrap);
-        padding: .5rem 1rem;
-        border-radius: var(--border-radius--);
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius-2-);
         transition: ease-in-out 0.2s;
-       
 
         &:hover {
-            background-color: var(--secondary-light-color);
+            background-color: var(--color-base-100);
         }
 
         .nav_items_a {
-            min-width: 170px;
-            color: var(--text-color-dark);
-            @include df_row(flex-start, center, 1rem, nowrap);
-            overflow: hidden;
-            
+            width: fit-content;
+
+            color: var(--text-color-light);
+            @include df_row(center, center, 1rem, nowrap);
+            // background-color: aqua;
+
+            // overflow: hidden;
+            p {
+                font-size: 0.9rem;
+                font-weight: 400;
+            }
+
             .nav_items_icon {
                 @include df_row(center, center, 1rem, nowrap);
-                width: 30px;
-                font-size: 1.4rem;
-                color: var(--text-color-dark);
-                
+                width: 26px;
+                height: 26px;
+                font-size: 1.2rem;
+                color: var(--text-color-light);
+                padding: 0.5rem 0.8rem;
+            }
+            .item_name {
+                min-width: 180px;
+                @include df_row(space-between, center, 1rem, nowrap);
             }
             .active {
-                
+                width: fit-content;
                 transform: translateX(350px);
                 transition: transform ease-in-out 0.3s;
-               
+                
             }
             .hidden {
                 width: fit-content;
                 transform: translateX(0px);
                 transition: transform ease-in-out 0.3s;
-                
-                
-               
+            }
+
+            .item_count {
+                width: 1.6rem;
+                height: 1.4rem;
+                @include df_row(center, center, 0rem, nowrap);
+                background-color: var(--color-base-50);
+                border-radius: calc(var(--border-radius-2-) / 2);
+                p {
+                    font-size: 0.8rem;
+                }
             }
         }
     }
