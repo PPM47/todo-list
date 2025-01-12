@@ -6,6 +6,8 @@ import MainCard from "./layouts/MainCard";
 import Gutter from "./layouts/Gutter";
 
 import TodayTasks from "./pages/TodayTasks";
+import UpcomingPage from "./pages/UpcomingPage";
+import Calendar from "./pages/Calendar";
 import StickyWall from "./pages/StickyWall";
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
             <Routes>
               <Route path="/" element={<TodayTasks />} /> {/* Default Route */}
               <Route path="/todayTasks" element={<TodayTasks />} />
+              <Route path="/upcoming" element={<UpcomingPage />} />
+              <Route path="/calendar" element={<Calendar />} />
               <Route path="/stickyWall" element={<StickyWall />} />
             </Routes>
           </ContentCard>

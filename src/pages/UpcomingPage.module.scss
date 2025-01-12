@@ -1,0 +1,47 @@
+@use "../styles//common.scss" as *;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/kimberly-signature");
+
+// @include df_row(flex-end, center, 1rem, nowrap);
+// @include position(absolute, 0, auto, auto, 0);
+// @include position(relative, auto, auto, auto, auto);
+// background-color: var(--primary-blue-80-color);
+
+.upcoming_tasks{
+    width: 100%;
+    .main_header{
+        width: 100%;
+        height: fit-content;
+        padding: 2rem 1rem;
+        @include df_row(flex-start, flex-start, 1rem, nowrap);
+        color: var(--text-color-light);
+
+        p{
+            font-size: 2.8rem;
+          
+            font-weight: 600;
+            color: var(--text-color-light);
+
+        }
+        .item_count {
+            padding: .3rem 0.5rem;
+            @include df_row(center, center, 0rem, nowrap);
+               background-color: var(--primary-blue-50-color);
+               transform: translateY(-20px);
+               border-radius: var(--border-radius--);   
+               height: fit-content;
+               p {
+                   font-size: 1.5rem;
+                   font-weight: 500;
+                   
+                   color: white;
+               }
+           }
+
+    }
+    .sections_container{
+        width: 100%;
+        @include df_row(flex-start, flex-start, 1rem, wrap);
+    }
+
+}

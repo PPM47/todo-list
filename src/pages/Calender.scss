@@ -1,0 +1,98 @@
+@use "../styles//common.scss" as *;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/kimberly-signature");
+
+// @include df_row(flex-end, center, 1rem, nowrap);
+// @include position(absolute, 0, auto, auto, 0);
+// @include position(relative, auto, auto, auto, auto);
+// background-color: var(--primary-blue-80-color);
+
+.rbc-toolbar {
+    width: 100%;
+    @include df_row(space-between, center, 1rem, wrap);
+    color: var(--text-color-light);
+    border-radius: var(--border-radius-2-);
+    border: none;
+
+    .rbc-btn-group {
+        @include df_row(center, center, 1rem, nowrap);
+
+        button {
+            color: var(--text-color-light) !important;
+            border-radius: var(--border-radius-3-);
+
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3) {
+                border: var(--primary-blue-color) solid 1px;
+                border-radius: var(--border-radius-3-);
+                background-color: var(--primary-blue-80-color);
+            }
+
+            &:hover {
+                background-color: var(--primary-blue-50-color);
+            }
+        }
+    }
+}
+.rbc-time-view {
+    border: none;
+    background-color: var(--primary-blue-80-color);
+    border-radius: var(--border-radius-3-);
+    padding: 1rem;
+    div {
+        border: none !important;
+    }
+    .rbc-header {
+        border-right: var(--primary-blue-color) solid 1px !important;
+    }
+    .rbc-today {
+        background-color: transparent;
+        border-right: var(--primary-blue-color) solid 1px !important;
+    }
+    .rbc-row-bg {
+        .rbc-day-bg {
+            border-right: var(--primary-blue-color) solid 1px !important;
+        }
+    }
+    .rbc-allday-cell {
+        border-right: var(--primary-blue-color) solid 1px !important;
+    }
+    .rbc-timeslot-group {
+    }
+    .rbc-row {
+        border-bottom: var(--primary-blue-color) solid 1px !important;
+    }
+    .rbc-time-slot {
+        border-bottom: var(--primary-blue-color) solid 1px !important;
+        height: fit-content;
+        span {
+            line-height: 0px;
+        }
+    }
+    .rbc-time-column {
+        border-right: var(--primary-blue-color) solid 1px !important;
+    }
+}
+// .rbc-time-header-content{
+//     border: var(--primary-blue-color) solid 1px;
+// }
+// Customize event appearance
+.rbc-event {
+    border: var(--primary-blue-color) solid 1px;
+    background-color: var(--primary-blue-50-color);
+}
+
+.rbc-time-content {
+    border-left: var(--primary-blue-color) solid 1px;
+    .rbc-today {
+        background-color: var(--primary-blue-80-color);
+        // border: var(--primary-blue-color) solid 1px;
+    }
+}
+.rbc-day-slot {
+    border-left: var(--primary-blue-color) solid 1px;
+}
+.rbc-header {
+    background-color: transparent;
+}

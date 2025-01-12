@@ -122,7 +122,8 @@ const Navbar = () => {
               to="/calendar"
             >
               <div className={classes.nav_items_icon}>
-                <FontAwesomeIcon icon={faLayerGroup} />
+              <FontAwesomeIcon icon={faCalendar} />
+               
               </div>
               <div
                 className={`${classes.item_name} ${
@@ -144,7 +145,7 @@ const Navbar = () => {
               to="/StickyWall"
             >
               <div className={classes.nav_items_icon}>
-                <FontAwesomeIcon icon={faCalendar} />
+              <FontAwesomeIcon icon={faLayerGroup} />
               </div>
               <div
                 className={`${classes.item_name} ${
